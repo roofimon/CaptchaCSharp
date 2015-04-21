@@ -11,9 +11,9 @@ namespace CaptchaLibrary
         abstract public string String();
         protected int value;
 
-        protected  bool valueIsLessThanZeroOrGreaterThanNine(int value)
+        protected  bool ValueIsLessThanZeroOrGreaterThanNine(int value)
         {
-            return (value < 1) || (value > 9);
+            return value < 1 || value > 9;
         }
     }
 }

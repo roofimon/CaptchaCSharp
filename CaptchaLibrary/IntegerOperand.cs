@@ -4,7 +4,7 @@
     {
         public IntegerOperand(int value)
         {
-            if (valueIsLessThanZeroOrGreaterThanNine(value)) throw new InvalidRangeException();
+            if (ValueIsLessThanZeroOrGreaterThanNine(value)) throw new InvalidRangeException();
             this.value = value;
         }
         
