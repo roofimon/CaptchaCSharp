@@ -32,7 +32,7 @@ namespace NUnit
 
         public string DoSomething()
         {
-            return null;
+            return "";
         }
     }
 }
