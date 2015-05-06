@@ -5,12 +5,12 @@
         public IntegerOperand(int value)
         {
             if (ValueIsLessThanZeroOrGreaterThanNine(value)) throw new InvalidRangeException();
-            this.value = value;
+            this.Value = value;
         }
         
         override public string String()
         {
-            return this.value.ToString();
+            return this.Value.ToString();
         }
     }
 }

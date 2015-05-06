@@ -20,12 +20,12 @@ namespace CaptchaLibrary
         public StringOperand(int value)
         {
             if (ValueIsLessThanZeroOrGreaterThanNine(value)) throw new InvalidRangeException(); 
-            this.value = value;
+            this.Value = value;
         }
 
         override public string String()
         {
-            return mapping[this.value]; 
+            return mapping[this.Value]; 
         }
     }
 }

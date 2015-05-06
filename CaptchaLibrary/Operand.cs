@@ -9,7 +9,7 @@ namespace CaptchaLibrary
     abstract public class Operand
     {
         abstract public string String();
-        protected int value;
+        protected int Value;
 
         protected  bool ValueIsLessThanZeroOrGreaterThanNine(int value)
         {

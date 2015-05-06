@@ -8,26 +8,26 @@ namespace CaptchaLibrary
 {
     public class Captcha
     {
-        private Operand leftOperand;
-        private Operand rightOperand;
-        private Operator oper;
+        private Operand _leftOperand;
+        private Operand _rightOperand;
+        private readonly Operator _oper;
 
         public Captcha(int pattern, int leftValue, int operatorValue, int rightValue)
         {
             SetLeftOperand(pattern, leftValue);
             SetRightOperand(pattern, rightValue);
-            this.oper = new Operator(operatorValue);
+            this._oper = new Operator(operatorValue);
         }
 
         private void SetRightOperand(int pattern, int rightValue)
         {
             if (IsStringIntegerPattern(pattern))
             {
-                this.rightOperand = new IntegerOperand(rightValue);
+                this._rightOperand = new IntegerOperand(rightValue);
             }
             else
             {
-                this.rightOperand = new StringOperand(rightValue);
+                this._rightOperand = new StringOperand(rightValue);
             }
         }
 
@@ -35,11 +35,11 @@ namespace CaptchaLibrary
         {
             if (IsStringIntegerPattern(pattern))
             {
-                this.leftOperand = new StringOperand(leftValue);
+                this._leftOperand = new StringOperand(leftValue);
             }
             else
             {
-                this.leftOperand = new IntegerOperand(leftValue);
+                this._leftOperand = new IntegerOperand(leftValue);
             }
         }
 
@@ -50,17 +50,17 @@ namespace CaptchaLibrary
 
         public Operand LeftOperand()
         {
-            return this.leftOperand;
+            return this._leftOperand;
         }
 
         public Operand RightOperand()
         {
-            return this.rightOperand;
+            return this._rightOperand;
         }
 
         public Operator Operator()
         {
-            return this.oper;
+            return this._oper;
         }
     }
 }

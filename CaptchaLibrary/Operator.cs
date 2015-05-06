@@ -7,19 +7,25 @@ namespace CaptchaLibrary
 {
     public class Operator
     {
+        private enum s
+        {
+            plus = 1,
+            multiply,
+            minus
+        };
         private string oper;
 
-        public Operator(int oper)
+        public Operator(int value) 
         {
-            if (oper == 1)
+            if (value == (int)s.plus)
             {
                 this.oper = "+";
             }
-            else if(oper == 2)
+            else if(value == (int)s.multiply)
             {
                 this.oper = "*";
             }
-            else if (oper == 3)
+            else if (value == (int)s.minus)
             {
                 this.oper = "-"; 
             }
