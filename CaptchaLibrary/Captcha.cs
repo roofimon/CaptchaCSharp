@@ -56,5 +56,10 @@
         {
             return this._oper;
         }
+
+        public string ToString()
+        {
+            return _leftOperand.String()+" "+_oper.String()+" "+_rightOperand.String();
+        }
     }
 }

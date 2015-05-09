@@ -1,9 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Security.Cryptography.X509Certificates;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace CaptchaLibrary
 {
@@ -11,6 +6,8 @@ namespace CaptchaLibrary
     {
         int Operand();
         int Operator();
+
+        int Pattern();
     }
 
     public class MyRandomizer : IRandomizer
@@ -32,6 +29,12 @@ namespace CaptchaLibrary
         public int Operator()
         {
             const int upperBound = 3;
+            return this._randomizer.Next(LowerBound, upperBound);
+        }
+
+        public int Pattern()
+        {
+            const int upperBound = 2;
             return this._randomizer.Next(LowerBound, upperBound);
         }
     }
