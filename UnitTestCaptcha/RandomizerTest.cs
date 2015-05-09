@@ -11,8 +11,7 @@ namespace UnitTestCaptcha
         {
             IRandomizer randomizer = new MyRandomizer(); 
             var result = randomizer.Operand();
-            Assert.GreaterOrEqual(result, 1);
-            Assert.LessOrEqual(result, 9);
+            Assert.That(result, Is.InRange(1, 9));
         }
 
         [Test]

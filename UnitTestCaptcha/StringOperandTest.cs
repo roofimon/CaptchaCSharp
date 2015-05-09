@@ -1,5 +1,7 @@
 ﻿using CaptchaLibrary;
 using NUnit.Framework;
+using FluentAssertions;
+
 namespace UnitTestCaptcha
 {
     [TestFixture]
@@ -9,14 +11,14 @@ namespace UnitTestCaptcha
         public void ToString_WhenValueIs1_ShouldBeOne()
         {
             StringOperand stringOperand = new StringOperand(1);
-            Assert.AreEqual("One", stringOperand.String());
+            stringOperand.String().Should().Be("One");
         }
 
         [Test]
         public void ToString_WhenValueIs9_ShouldBeNine()
         {
             StringOperand stringOperand = new StringOperand(9);
-            Assert.AreEqual("Nine", stringOperand.String());
+            stringOperand.String().Should().Be("Nine");
         }
 
         [Test]
