@@ -1,5 +1,6 @@
 ﻿using NUnit.Framework;
-using Moq;
+using NUnit.Mocks;
+using NSubstitute;
 
 namespace NUnit
 {
@@ -7,10 +8,10 @@ namespace NUnit
     public class TestMoqAccount
     {
         [Test]
-        public void TestMethod1() { 
-            var mock = new Mock<IAccount>();
-            mock.Setup(foo => foo.DoSomething()).Returns("x");
-            Assert.AreEqual("x", mock.Object.DoSomething());
+        public void TestMethod1() {
+            var stubAccount = Substitute.For<IAccount>();
+            stubAccount.DoSomething().Returns("x");
+            Assert.AreEqual("x", stubAccount.DoSomething());
         }
     }
 }

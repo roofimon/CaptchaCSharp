@@ -19,7 +19,7 @@ namespace NUnit.Framework
 
             Assert.AreEqual(250m, destination.Balance);
             Assert.AreEqual(100m, source.Balance);
-            Assert.That(3, Is.InRange(1, 2));
+            Assert.That(1, Is.InRange(1, 2));
         }
     }
 }

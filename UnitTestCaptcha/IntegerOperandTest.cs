@@ -1,33 +1,33 @@
 ﻿using CaptchaLibrary;
-using Microsoft.VisualStudio.TestTools.UnitTesting;
+using NUnit.Framework;
 
 namespace UnitTestCaptcha
 {
-    [TestClass]
+    [TestFixture]
     public class IntegerOperandTest
     {
-        [TestMethod]
+        [Test]
         public void ToString_WhenValueIs1_ShouldBe1()
         {
             IntegerOperand integerOperand = new IntegerOperand(1);
             Assert.AreEqual("1", integerOperand.String());
         }
 
-        [TestMethod]
+        [Test]
         public void ToString_WhenValueIs1_ShouldBe9()
         {
             IntegerOperand integerOperand = new IntegerOperand(9);
             Assert.AreEqual("9", integerOperand.String());
         }
 
-        [TestMethod]
+        [Test]
         [ExpectedException(typeof(InvalidRangeException))]
         public void ToString_WhenValueIs10_ShouldThrowInvalidRangeException()
         {
             IntegerOperand integerOperand = new IntegerOperand(10);
         }
 
-        [TestMethod]
+        [Test]
         [ExpectedException(typeof(InvalidRangeException))]
         public void ToString_WhenValueIs0_ShouldThrowInvalidRangeException()
         {
